@@ -14,9 +14,8 @@ server:
 super:
   qid: 3474006766 # 超级管理
 
-# 服务已不可用
-#wzry:
-#  api: http://119.45.132.231:8080
+wzry:
+  api: http://119.45.132.231:8080
 
 #top.kloping.ai.mcp:
 #  concurrent-init: false  # 默认为 true，设置为 false 则串行初始

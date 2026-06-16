@@ -11,6 +11,7 @@ import net.mamoe.mirai.message.data.*;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.util.Map;
  * @since 2025/7/19-20:11
  */
 @Slf4j
-//@Component
+@Component
 public class WzydView implements BaseOptional {
 
     private final String[] tips = {
@@ -34,6 +35,7 @@ public class WzydView implements BaseOptional {
             "正在生成您的专属的图表，请等一下下~",
             "数据正在努力加载中，很快就完成啦！"
     };
+
     public Map<String, OneApi> apis = new HashMap<>();
     @Value("${wzry.api:null}")
     private String api;
