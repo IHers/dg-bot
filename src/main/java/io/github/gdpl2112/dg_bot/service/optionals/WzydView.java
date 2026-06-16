@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -121,7 +122,7 @@ public class WzydView implements BaseOptional {
         apis.put("查询UID", ((content, event) -> {
             String name = content.substring(5);
             if (Judge.isEmpty(name)) return "使用方式: 查询UID\"游戏昵称\" ";
-            java.lang.Object data = doRequest("/query/show", Map.of("name", name));
+            java.lang.Object data = doRequest("/query/show", Map.of("name", URLEncoder.encode(name)));
             if (data != null) {
                 if (data instanceof String) {
                     try {
